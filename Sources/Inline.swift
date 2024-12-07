@@ -21,7 +21,7 @@ public enum InlineToken {
 }
 
 typealias InlineTokenGenerator = (String) -> InlineToken
-let markerList: [(String, InlineTokenGenerator)] = [
+nonisolated(unsafe) let markerList: [(String, InlineTokenGenerator)] = [
     ("~", { text in .code(text) }),
     ("=", { text in .verbatim(text) }),
     ("*", { text in .bold(text) }),

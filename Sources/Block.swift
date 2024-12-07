@@ -19,7 +19,7 @@ public struct Block: Node {
     }
     
     public var description: String {
-        return "Block(name: \(name), params: \(params), content: \(content))"
+      return "Block(name: \(name), params: \(String(describing: params)), content: \(content))"
     }
 }
 
