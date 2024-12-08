@@ -53,7 +53,7 @@ public struct Section: Node {
     }
     
     public var description: String {
-        return "Section[\(index)](stars: \(stars), keyword: \(keyword)), priority: \(priority)), title: \(title)\n - tags: \(tags)\n - \(drawers)\n - \(content)"
+      return "Section[\(String(describing: index))](stars: \(stars), keyword: \(String(describing: keyword))), priority: \(String(describing: priority))), title: \(String(describing: title))\n - tags: \(String(describing: tags))\n - \(String(describing: drawers))\n - \(content)"
     }
 }
 
@@ -62,7 +62,7 @@ public struct Planning: Node {
     public let timestamp: Timestamp?
     
     public var description: String {
-        return "Planning(keyword: \(keyword), timestamp: \(timestamp))"
+      return "Planning(keyword: \(keyword), timestamp: \(String(describing: timestamp)))"
     }
 }
 

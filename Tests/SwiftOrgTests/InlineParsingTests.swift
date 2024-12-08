@@ -9,7 +9,7 @@
 import XCTest
 import SwiftOrg
 
-class InlineParsingTests: XCTestCase {
+class InlineParsingTests: XCTestCase, @unchecked Sendable {
     
     func testInlineParsing() {
         let text = "hello *world*, and /Welcome/ to *org* world. and [[http://google.com][this]] is a link. and [[/image/logo.png][this]] is a image."

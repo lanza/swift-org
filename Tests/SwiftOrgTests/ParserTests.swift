@@ -17,7 +17,7 @@ fileprivate func eval(_ node: Node?, makesure: (Section) -> Void) {
     makesure(section)
 }
 
-class ParserTests: XCTestCase {
+class ParserTests: XCTestCase, @unchecked Sendable {
 
     override func setUp() {
         super.setUp()

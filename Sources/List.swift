@@ -19,7 +19,7 @@ public struct ListItem: Node {
         checked = c
     }
     public var description: String {
-        return "ListItem(text: \(text), checked: \(checked), subList: \(subList))"
+      return "ListItem(text: \(String(describing: text)), checked: \(String(describing: checked)), subList: \(String(describing: subList)))"
     }
 }
 

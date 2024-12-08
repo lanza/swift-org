@@ -1,5 +1,5 @@
 extension TokenizerTests {
-    static var allTests = [
+  nonisolated(unsafe) static var allTests = [
       ("testTokenBlank", testTokenBlank),
       ("testTokenSetting", testTokenSetting),
       ("testTokenHeading", testTokenHeading),
@@ -20,7 +20,7 @@ extension TokenizerTests {
 // }
 
 extension ParserTests {
-    static var allTests = [
+  nonisolated(unsafe) static var allTests = [
       ("testParseSettings", testParseSettings),
       ("testDefaultTodos", testDefaultTodos),
       ("testInBufferTodos", testInBufferTodos),
@@ -40,14 +40,14 @@ extension ParserTests {
 }
 
 extension IndexingTests {
-    static var allTests = [
+  nonisolated(unsafe) static var allTests = [
       ("testIndexing", testIndexing),
       ("testSectionIndexing", testSectionIndexing),
     ]
 }
 
 extension InlineParsingTests {
-    static var allTests = [
+  nonisolated(unsafe) static var allTests = [
       ("testInlineParsing", testInlineParsing),
       ("testCornerCases", testCornerCases),
       ("testInlineFootnote", testInlineFootnote),
@@ -55,7 +55,7 @@ extension InlineParsingTests {
 }
 
 extension TimestampTests {
-    static var allTests = [
+  nonisolated(unsafe) static var allTests = [
       ("testParseTimestamp", testParseTimestamp),
       ("testTimestampWithSpacing", testTimestampWithSpacing),
       ("testTimestampWithRepeater", testTimestampWithRepeater),
@@ -65,7 +65,7 @@ extension TimestampTests {
 }
 
 extension ConvertToJSONTests {
-    static var allTests = [
+  nonisolated(unsafe) static var allTests = [
         ("testJSONConvertion", testJSONConvertion),
     ]
 }

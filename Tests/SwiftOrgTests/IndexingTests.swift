@@ -31,7 +31,7 @@ fileprivate func eval(_ node: Node?, makesure: (Section) -> Void) {
     }
 }
 
-class IndexingTests: XCTestCase {
+class IndexingTests: XCTestCase, @unchecked Sendable {
 
     func testIndexing() {
         let index = OrgIndex([0, 1, 2])

@@ -10,7 +10,7 @@ import XCTest
 @testable import SwiftOrg
 
 
-class TokenizerTests: XCTestCase {
+class TokenizerTests: XCTestCase, @unchecked Sendable {
 
     override func setUp() {
         super.setUp()

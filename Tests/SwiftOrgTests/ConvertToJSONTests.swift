@@ -9,7 +9,7 @@
 import XCTest
 import SwiftOrg
 
-class ConvertToJSONTests: XCTestCase {
+class ConvertToJSONTests: XCTestCase, @unchecked Sendable {
     func testJSONConvertion() throws {
         let lines = [
             "#+TITLE: Org Mode Syntax",

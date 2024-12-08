@@ -12,7 +12,7 @@ public struct Comment: Node {
     public let text: String?
     
     public var description: String {
-        return "Comment(text: \(text))"
+      return "Comment(text: \(String(describing: text)))"
     }
 }
 

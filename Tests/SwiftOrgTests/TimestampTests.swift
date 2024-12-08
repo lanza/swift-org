@@ -17,7 +17,7 @@ let _day = "Tue"
 let _time = "18:00"
 let _repeater = "+2w"
 
-class TimestampTests: XCTestCase {
+class TimestampTests: XCTestCase, @unchecked Sendable {
 
     func testParseTimestamp() {
         let activeTimestamp = "<\(_date) \(_day) \(_time)>"

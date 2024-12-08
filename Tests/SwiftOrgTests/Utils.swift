@@ -10,7 +10,7 @@ import XCTest
 import Foundation
 @testable import SwiftOrg
 
-let parser = OrgParser()
+nonisolated(unsafe) let parser = OrgParser()
 
 func parse(_ lines: [String], with parser: OrgParser = parser) -> OrgDocument? {
     do {
