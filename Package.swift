@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
   name: "SwiftOrg",
   products: [
-    .library(name: "SwiftOrg", targets: ["SwiftOrg"]),
+    .library(name: "SwiftOrg", targets: ["SwiftOrg"])
   ],
   targets: [
     .target(name: "SwiftOrg"),

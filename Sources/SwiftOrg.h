@@ -14,6 +14,5 @@ FOUNDATION_EXPORT double SwiftOrgVersionNumber;
 //! Project version string for SwiftOrg.
 FOUNDATION_EXPORT const unsigned char SwiftOrgVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <SwiftOrg/PublicHeader.h>
-
-
+// In this header, you should import all the public headers of your framework
+// using statements like #import <SwiftOrg/PublicHeader.h>

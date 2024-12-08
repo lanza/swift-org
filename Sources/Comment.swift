@@ -9,10 +9,9 @@
 import Foundation
 
 public struct Comment: Node {
-    public let text: String?
-    
-    public var description: String {
-      return "Comment(text: \(String(describing: text)))"
-    }
-}
+  public let text: String?
 
+  public var description: String {
+    return "Comment(text: \(String(describing: text)))"
+  }
+}
