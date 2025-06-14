@@ -57,37 +57,37 @@ public struct Section: Node {
     return
       "Section[\(String(describing: index))](stars: \(stars), keyword: \(String(describing: keyword))), priority: \(String(describing: priority))), title: \(String(describing: title))\n - tags: \(String(describing: tags))\n - \(String(describing: drawers))\n - \(content)"
   }
-  
+
   // MARK: - Transformation Methods
-  
+
   /// Add content to this section
   public mutating func addContent(_ node: Node) {
     content.append(node)
   }
-  
+
   /// Remove content at specified index
   public mutating func removeContent(at index: Int) -> Node? {
     guard index < content.count else { return nil }
     return content.remove(at: index)
   }
-  
+
   /// Insert content at specified index
   public mutating func insertContent(_ node: Node, at index: Int) {
     guard index <= content.count else { return }
     content.insert(node, at: index)
   }
-  
+
   /// Find all lists in this section
   public var lists: [List] {
     return content.compactMap { $0 as? List }
   }
-  
+
   /// Find list at specified index in content
   public func findList(at contentIndex: Int) -> List? {
     guard contentIndex < content.count else { return nil }
     return content[contentIndex] as? List
   }
-  
+
   /// Find all subsections (sections with more stars than this section)
   public var subsections: [Section] {
     return content.compactMap { node in
@@ -97,31 +97,37 @@ public struct Section: Node {
       return nil
     }
   }
-  
+
   /// Find subsection by title
   public func findSubsection(withTitle title: String) -> Section? {
     return content.first { node in
-      if let section = node as? Section, section.stars > self.stars, section.title == title {
+      if let section = node as? Section, section.stars > self.stars,
+        section.title == title
+      {
         return true
       }
       return false
     } as? Section
   }
-  
+
   /// Remove subsection by title
   public mutating func removeSubsection(withTitle title: String) -> Section? {
-    guard let index = content.firstIndex(where: { node in
-      if let section = node as? Section, section.stars > self.stars, section.title == title {
-        return true
-      }
-      return false
-    }) else {
+    guard
+      let index = content.firstIndex(where: { node in
+        if let section = node as? Section, section.stars > self.stars,
+          section.title == title
+        {
+          return true
+        }
+        return false
+      })
+    else {
       return nil
     }
-    
+
     return content.remove(at: index) as? Section
   }
-  
+
   /// Add a subsection to this section
   public mutating func addSubsection(_ subsection: Section) {
     content.append(subsection)
