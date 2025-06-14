@@ -150,8 +150,8 @@ public struct OrgDocument: Node {
   ) -> Bool {
     guard sourceTopLevelIndex < content.count,
       targetTopLevelIndex < content.count,
-      var sourceSection = content[sourceTopLevelIndex] as? Section,
-      var targetSection = content[targetTopLevelIndex] as? Section
+      let sourceSection = content[sourceTopLevelIndex] as? Section,
+      let _ = content[targetTopLevelIndex] as? Section
     else {
       return false
     }

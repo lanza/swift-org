@@ -46,12 +46,12 @@ public struct OrgIndex: CustomStringConvertible, Hashable {
     }.joined(separator: ".")
   }
 
-  public var hashValue: Int {
-    return description.hashValue
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(description)
   }
 
   public static func == (lhs: OrgIndex, rhs: OrgIndex) -> Bool {
-    return lhs.hashValue == rhs.hashValue
+    return lhs.description == rhs.description
   }
 }
 

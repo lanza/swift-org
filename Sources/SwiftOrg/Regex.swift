@@ -83,18 +83,19 @@ extension String {
     for m in matches {
       if m.range.location > cursor {
         splitted.append(
-          self.substring(
-            with: self.index(
-              self.startIndex, offsetBy: cursor)..<self.index(
-                self.startIndex, offsetBy: m.range.location)))
+          String(
+            self[
+              self.index(
+                self.startIndex, offsetBy: cursor)..<self.index(
+                  self.startIndex, offsetBy: m.range.location)]))
       }
       splitted.append(NSString(string: self).substring(with: m.range))
-      cursor = (m.range.toRange()?.upperBound)! + 1
+      cursor = Range(m.range)!.upperBound + 1
     }
     if cursor <= self.count {
       splitted.append(
-        self.substring(
-          with: self.index(self.startIndex, offsetBy: cursor)..<self.endIndex))
+        String(
+          self[self.index(self.startIndex, offsetBy: cursor)..<self.endIndex]))
     }
     return splitted
   }
@@ -112,18 +113,19 @@ extension String {
     for m in matches {
       if m.range.location > cursor {
         or(
-          self.substring(
-            with: self.index(
-              self.startIndex, offsetBy: cursor)..<self.index(
-                self.startIndex, offsetBy: m.range.location)))
+          String(
+            self[
+              self.index(
+                self.startIndex, offsetBy: cursor)..<self.index(
+                  self.startIndex, offsetBy: m.range.location)]))
       }
       match(getMatches(m))
-      cursor = (m.range.toRange()?.upperBound)!
+      cursor = Range(m.range)!.upperBound
     }
     if cursor < self.count {
       or(
-        self.substring(
-          with: self.index(self.startIndex, offsetBy: cursor)..<self.endIndex))
+        String(
+          self[self.index(self.startIndex, offsetBy: cursor)..<self.endIndex]))
     }
   }
 }
